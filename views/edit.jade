@@ -1,0 +1,11 @@
+!!! 5
+html
+	body
+	h1 Editar dados do cliente: #{cliente.nome}
+	form(action="/cliente", method="post")
+		input(type="hidden", name="_method", value="put")
+		label Nome:
+		input(type="text", name="cliente[nome]", value="#{cliente.nome}")
+		label Idade:
+		input(type="text", name="cliente[idade]", value="#{cliente.idade}")
+		button(type="submit") Enviar

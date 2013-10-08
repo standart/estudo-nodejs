@@ -1,0 +1,16 @@
+!!! 5
+html
+	body
+		h1 Cadastro de Clientes
+		form(action="/cliente", method="post")
+			label Nome:
+				input(type="text", name="cliente[nome]")
+			label Idade:
+				input(type="text", name="cliente[idade]")
+			button(type="submit") Enviar
+		h1 Lista de Clientes
+		ul
+			each cliente, i in clientes
+				li #{cliente.nome} - #{cliente.idade}
+				a(href="/cliente/#{i}/editar") Editar | 
+				a(href="/cliente/#{i}") Excluir		
